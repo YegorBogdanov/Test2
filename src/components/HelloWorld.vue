@@ -48,7 +48,7 @@
         <div class="hour"></div>
       </div>
     </div>
-    <div class="angle">angle is: {{ angle }}</div>
+    <div class="angle">The angle between minute and second hands is: {{ angle }}</div>
     <button v-on:click="clock">start</button>
   </div>
 </template>
