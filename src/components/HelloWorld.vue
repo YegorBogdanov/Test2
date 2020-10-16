@@ -57,7 +57,7 @@
 export default {
   data() {
     return {
-      angle: "privet",
+      angle: 0,
     };
   },
   methods: {
@@ -72,7 +72,7 @@ export default {
         let min = (date.getMinutes() + sec) / 60;
         let hour = (date.getHours() + min) / 12;
 
-        this.angle = min * 360 - sec * 360;
+        this.angle = Math.round(min * 360 - sec * 360);
 
         console.log(this.angle);
 
