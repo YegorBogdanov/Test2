@@ -48,7 +48,12 @@
         <div class="hour"></div>
       </div>
     </div>
-    <div class="angle">The angle between minute and second hands is: {{ angle }}</div>
+    <div class="numbers">
+      current time is {{ hours }}:{{ minutes }}:{{ seconds }}
+    </div>
+    <div class="angle">
+      The angle between minute and second hands is: {{ angle }}
+    </div>
     <button v-on:click="clock">start</button>
   </div>
 </template>
@@ -58,6 +63,9 @@ export default {
   data() {
     return {
       angle: 0,
+      seconds: 0,
+      minutes: 0,
+      hours: 0,
     };
   },
   methods: {
@@ -73,8 +81,9 @@ export default {
         let hour = (date.getHours() + min) / 12;
 
         this.angle = Math.round(min * 360 - sec * 360);
-
-        console.log(this.angle);
+        this.hours = date.getHours();
+        this.minutes = date.getMinutes();
+        this.seconds = date.getSeconds();
 
         secDiv.style.transform = "rotate(" + sec * 360 + "deg)";
         minDiv.style.transform = "rotate(" + min * 360 + "deg)";
@@ -94,6 +103,11 @@ export default {
 }
 
 .angle {
+  color: black;
+  font-size: 30px;
+}
+
+.numbers {
   color: black;
   font-size: 30px;
 }
