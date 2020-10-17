@@ -49,7 +49,7 @@
       </div>
     </div>
     <div class="numbers">
-      current time is {{ hours }}:{{ minutes }}:{{ seconds }}
+      The current time is {{ hours }}:{{ minutes }}:{{ seconds }}
     </div>
     <div class="angle">
       The angle between minute and second hands is: {{ angle }}
